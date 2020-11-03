@@ -1,5 +1,5 @@
 # React-Website
- I made this simple site in react for study
+ I made this simple landing page in react for study
 
 How to use*
 
