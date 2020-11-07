@@ -1,13 +1,23 @@
 import React from 'react'
 import Styled from 'styled-components'
-import {Container,SpaceBetween} from '../common/common'
+import {Container,SpaceBetween} from '../common/Common'
 
 export default () => {
     return(
         <Nav>
             <Container>
             <SpaceBetween>
-                <div>
+                <div className="navHidden"> 
+                    <div>
+                        <ul>
+                            <li><a>About</a></li>
+                            <li><a>Features</a></li>
+                            <li><a>How work</a></li>
+                            <li><a>Info</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="navContent">
                     <ul>
                         <li><a>About</a></li>
                         <li><a>Features</a></li>
@@ -19,7 +29,7 @@ export default () => {
                     <Triangle></Triangle>
                 </div>
 
-                <div>
+                <div className="navContent">
                     <ul>
                         <li><a>How work</a></li>
                         <li><a>Info</a></li>
@@ -41,17 +51,19 @@ export const Nav = Styled.nav `
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
 
     div ul li{
         display:inline;
         margin-left: 0.8rem;
         margin-right: 0.8rem;
+        transition:all 1s;
     }
 
     li:hover{
         color:#66d02a;
         cursor: pointer;
+        border-bottom: 1px solid #66d02a; 
     }
 
     span {
@@ -62,13 +74,48 @@ export const Nav = Styled.nav `
         text-align: center;
         margin-top:40px;
     }
+
+    .navHidden {
+        display:none;
+        width: 50px;
+        height:50px;
+        background-color:red;
+    }
+
+    @media(max-width: 900px){
+        .navContent {
+            display:none; 
+        }
+
+        .navHidden {
+            display:block;
+        }
+    }
+
+    .navHidden div {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+
 `
 
-export const Triangle = Styled.div `
+const SpaceBetweenMedia = Styled(SpaceBetween) `
+    @media(max-width:900px) {
+        justify-content: center;
+    }
+`
+
+
+const Triangle = Styled.div `
     width: 0; 
     height: 0; 
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-top: 40px solid #3c3c3c;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-top: 45px solid #3c3c3c;
 
 `

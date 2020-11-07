@@ -2,8 +2,8 @@ import React from 'react'
 import Styled from 'styled-components'
 
 import Navbar from '../navbar/Navbar'
-import {Button} from '../common/common'
-import Astro from '../../assets/astronauta.png'
+import {Button} from '../common/Common'
+import Astro from '../../assets/saturno.svg'
 
 export default () => {
     return(
@@ -20,9 +20,7 @@ export default () => {
                     </div>
                 </Item1>
                 <Item2>
-                
-                    <Img src={Astro}/>  
-                    
+                    <Img src={Astro}></Img>
                 </Item2>
             </Grid>
         </Header>
@@ -45,7 +43,7 @@ const Grid = Styled.div `
 const Item1 = Styled.div `
     width:100%; 
     height:100%;
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     color: white;
     display:flex;
     flex-direction: column;
@@ -72,7 +70,7 @@ const Item2 = Styled.div `
 `
 
 const Img = Styled.img `
-    width: 40%;
+    width: 50%;
     height: auto;
     margin-left:20%;
 `
